@@ -12,11 +12,11 @@ INSERT INTO EMPLOYEE_PAY (employee_level, pay_per_hour) VALUES (4, 22.75)
 INSERT INTO EMPLOYEE_PAY (employee_level, pay_per_hour) VALUES (5, 25.00)
 --
 -- -- Insert data into CUSTOMERS table
-INSERT INTO CUSTOMERS (customer_id, first_name, last_name, phone, email, kyc_flag, address_id) VALUES ('CUST0001', 'Jane', 'Smith', '9876543210', 'jane.smith@example.com', 2, 'ADDR0001')
-INSERT INTO CUSTOMERS (customer_id, first_name, last_name, phone, email, kyc_flag, address_id) VALUES ('CUST0002', 'Michael', 'Johnson', '5551234567', 'michael.johnson@example.com', 0, 'ADDR0002')
-INSERT INTO CUSTOMERS (customer_id, first_name, last_name, phone, email, kyc_flag, address_id) VALUES ('CUST0003', 'Emily', 'Wilson', '1112223333', 'emily.wilson@example.com', 3, 'ADDR0003')
-INSERT INTO CUSTOMERS (customer_id, first_name, last_name, phone, email, kyc_flag, address_id) VALUES ('CUST0004', 'Robert', 'Anderson', '9998887777', 'robert.anderson@example.com', 4, 'ADDR0004')
-INSERT INTO CUSTOMERS (customer_id, first_name, last_name, phone, email, kyc_flag, address_id) VALUES ('CUST0005', 'Olivia', 'Davis', '3334445555', 'olivia.davis@example.com', 2, 'ADDR0005')
+INSERT INTO CUSTOMERS (customer_id, first_name, last_name, phone, email, kyc_flag, address_id) VALUES ('CUST0001', 'Jane', 'Smith', '9876543210', 'jane.smith@example.com', 2)
+INSERT INTO CUSTOMERS (customer_id, first_name, last_name, phone, email, kyc_flag, address_id) VALUES ('CUST0002', 'Michael', 'Johnson', '5551234567', 'michael.johnson@example.com', 0)
+INSERT INTO CUSTOMERS (customer_id, first_name, last_name, phone, email, kyc_flag, address_id) VALUES ('CUST0003', 'Emily', 'Wilson', '1112223333', 'emily.wilson@example.com', 3)
+INSERT INTO CUSTOMERS (customer_id, first_name, last_name, phone, email, kyc_flag, address_id) VALUES ('CUST0004', 'Robert', 'Anderson', '9998887777', 'robert.anderson@example.com', 4)
+INSERT INTO CUSTOMERS (customer_id, first_name, last_name, phone, email, kyc_flag, address_id) VALUES ('CUST0005', 'Olivia', 'Davis', '3334445555', 'olivia.davis@example.com', 2)
 --
 -- -- Insert more data into CUSTOMER_ADDRESS table
 INSERT INTO CUSTOMER_ADDRESS (address_id, customer_id, street_number, street_name, postal_code, country, province_state, city) VALUES ('ADDR0001', 'CUST0001', 456, 'Maple Avenue', '54321', 'USA', 'NY', 'New York')
