@@ -4,7 +4,7 @@ CREATE TABLE KYC (value NUMBER PRIMARY KEY CHECK (value BETWEEN 0 AND 4), descri
 CREATE TABLE EMPLOYEE_PAY (employee_level NUMBER PRIMARY KEY CHECK (employee_level BETWEEN 1 AND 5), pay_per_hour FLOAT UNIQUE CHECK (pay_per_hour > 0))
 --
 -- Create CUSTOMERS table
-CREATE TABLE CUSTOMERS (customer_id VARCHAR2(100) PRIMARY KEY CHECK (REGEXP_LIKE(customer_id, '^CUST[0-9]+')), first_name VARCHAR2(100), last_name VARCHAR2(100), phone VARCHAR2(20) CHECK (REGEXP_LIKE(phone, '^[0-9]{10}$')), email VARCHAR2(100) CHECK (REGEXP_LIKE(email, '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}$')), kyc_flag NUMBER CHECK (kyc_flag BETWEEN 0 AND 4), address_id VARCHAR2(100))
+CREATE TABLE CUSTOMERS (customer_id VARCHAR2(100) PRIMARY KEY CHECK (REGEXP_LIKE(customer_id, '^CUST[0-9]+')), first_name VARCHAR2(100), last_name VARCHAR2(100), phone VARCHAR2(20) CHECK (REGEXP_LIKE(phone, '^[0-9]{10}$')), email VARCHAR2(100) CHECK (REGEXP_LIKE(email, '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}$')), kyc_flag NUMBER CHECK (kyc_flag BETWEEN 0 AND 4))
 --
 -- Create CUSTOMER_ADDRESS table
 CREATE TABLE CUSTOMER_ADDRESS (address_id VARCHAR2(100) PRIMARY KEY CHECK (REGEXP_LIKE(address_id, '^ADDR[0-9]+')), customer_id VARCHAR2(100), street_number NUMBER, street_name VARCHAR2(100), postal_code VARCHAR2(10), country VARCHAR2(80), province_state VARCHAR2(20), city VARCHAR2(100), CONSTRAINT fk_customer_address FOREIGN KEY (customer_id) REFERENCES CUSTOMERS(customer_id))
