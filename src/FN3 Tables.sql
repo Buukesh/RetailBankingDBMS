@@ -10,7 +10,7 @@ CREATE TABLE CUSTOMERS (customer_id VARCHAR2(100) PRIMARY KEY CHECK (REGEXP_LIKE
 CREATE TABLE CUSTOMER_ADDRESS (address_id VARCHAR2(100) PRIMARY KEY CHECK (REGEXP_LIKE(address_id, '^ADDR[0-9]+')), customer_id VARCHAR2(100), street_number NUMBER, street_name VARCHAR2(100), postal_code VARCHAR2(10), country VARCHAR2(80), province_state VARCHAR2(20), city VARCHAR2(100), CONSTRAINT fk_customer_address FOREIGN KEY (customer_id) REFERENCES CUSTOMERS(customer_id))
 --
 -- Create ACCOUNT_STRUCT table
-CREATE TABLE ACCOUNT_STRUCT (product_id VARCHAR2(100) PRIMARY KEY CHECK (REGEXP_LIKE(product_id, '^PROD[0-9]+')), name VARCHAR2(100), category VARCHAR2(100), structure VARCHAR2(3))
+CREATE TABLE ACCOUNT_STRUCT (product_id VARCHAR2(100) PRIMARY KEY CHECK (REGEXP_LIKE(product_id, '^PROD[0-9]+')), name VARCHAR2(100) CHECK (type IN ('Savings Account', 'Chequing Account ', 'Investing Account')), category VARCHAR2(100) (type IN ('Savings', 'Chequing', 'Investing')), structure VARCHAR2(3))
 --
 -- Create ACCOUNTS table
 CREATE TABLE ACCOUNTS (account_id VARCHAR2(100) PRIMARY KEY CHECK (REGEXP_LIKE(account_id, '^ACCT[0-9]+')), product_id VARCHAR2(100), customer_id VARCHAR2(100), balance FLOAT, currency VARCHAR2(4), status NUMBER(1) CHECK (status IN (0, 1)), CONSTRAINT fk_product_id FOREIGN KEY (product_id) REFERENCES ACCOUNT_STRUCT(product_id), CONSTRAINT fk_customer FOREIGN KEY (customer_id) REFERENCES CUSTOMERS(customer_id))
